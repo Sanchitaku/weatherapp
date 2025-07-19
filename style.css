@@ -68,7 +68,7 @@ body{
     background-color:rgb(59, 59, 144) ;
     width: 100%;
     max-width: 600px;
-   margin:  auto;
+   margin: 0px auto;
     height: 100vh;
     box-sizing: border-box;
  border-radius: 8px;
