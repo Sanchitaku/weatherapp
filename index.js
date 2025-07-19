@@ -23,17 +23,25 @@ async function getweather() {
 
 
     let cloudyHTML = rainChance >50 && rainChance<=80
-      ? `<p> </p><img src="https://openweathermap.org/img/wn/03d@2x.png" alt="Cloudy Icon" width="90px" height="100px"/>`
+      ? `<p> </p><img src="https://openweathermap.org/img/wn/03d@2x.png" alt="Cloudy Icon" width="90px" height="90px"/>`
       : "";
       const heavyrain=rainChance > 80
-      ? `<p> </p><img src="https://openweathermap.org/img/wn/09d@2x.png" alt="Rainy Icon" width="200px"/>`
+      ? `<p> </p><img src="https://openweathermap.org/img/wn/09d@2x.png" alt="Rainy Icon" width="200px" height="90px"/>`
       : "";
       const temp=data.main.temp;
+
+
+
+
       const tempHTML=rainChance<50 ?`<p>Its Sunny</p><img src= "https://openweathermap.org/img/wn/01d@2x.png" alt="Clear sky width="90"/>`: "";
       const humidity=data.main.humidity;
       const Humidityhtml=`<p>💧</p>`;
         
-        result.innerHTML=`<div class="date"><p class="day" >${day}</p> <h3 >${data.name},${data.sys.country}</h3></div><p class="type"> ${heavyrain}${cloudyHTML} ${tempHTML} </p>
+        result.innerHTML=   `<div class="date"><p class="day" >${day}</p> <h3 >${data.name},${data.sys.country}</h3></div>
+        
+        <div class="sunny-bg">
+        
+        <p class="type"> ${heavyrain}${cloudyHTML} ${tempHTML} </p>
         <div class=weatherinfo>
 
         <p class="temp">${temp}°C</p> 
@@ -43,6 +51,7 @@ async function getweather() {
          
      <div class="humid">   <p>Humidity:${humidity}% </p>${Humidityhtml}</div>
         <p>Visibility:${data.visibility}%</p>
+        </div>
         </div>
        `
     }
