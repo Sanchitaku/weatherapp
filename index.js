@@ -3,7 +3,7 @@ const enter=document.getElementById('enter');
 const result=document.getElementById('result');
 const now=new Date();
 const year=now.getFullYear();
-const days=[ "Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saurdayt"];
+const days=[ "Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 const day=days[now.getDay()];
  result.innerHTML=`<p class="day" >${day}</p>`
 
